@@ -1,6 +1,7 @@
 package org.example.exerciseData;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExerciseTextFileService {
@@ -45,5 +46,19 @@ public class ExerciseTextFileService {
             e.printStackTrace();
         }
         return src;
+    }
+
+    public static List<String> readFromLine(File file){
+        List<String> strings = new ArrayList<>();
+        try(BufferedReader reader = new BufferedReader(new FileReader(file)))
+        {
+            String line;
+            while((line=reader.readLine())!=null)
+                strings.add(line);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return strings;
     }
 }

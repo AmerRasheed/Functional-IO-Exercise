@@ -19,7 +19,7 @@ public class App {
         // a. In Java create a method that read in a String from file and return the String using FileReader.
 
         // Creating a text file
-        File textFilePrace1 = new File("source/Practice1.txt");
+   /    File textFilePrace1 = new File("source/Practice1.txt");
         String string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         ExerciseTextFileService.writeString(textFilePrace1, string);
 
@@ -30,19 +30,24 @@ public class App {
             e.printStackTrace();
         }
 
-        //Practice 2
-        // Create a textfile (.txt) and fill it with lines of names.
-        // a. In Java create a method that read in the lines into a Collection of your choice using BufferedReader.
-        // One line for each element in the Collection.
-        //File textFilePrace2 = new File("source/Practice2.txt");
-
         //Practice 3. In Java create a Collection that contains at least five String objects.
         // a. Then create a method that write each String object from the collection into a textfile.
         File textFilePrace3 = new File("source/Practice3.txt");
         List<String> collectionPractice3 = Arrays.asList("Amer","Erik","Martin","Tobias","Ulf");
-        ExerciseTextFileService.writetoFile(textFilePrace3, collectionPractice3);
+        ExerciseTextFileService.writetoFile(textFilePrace3, collectionPractice3);                  //Written  Amer,Erik,Martin,Tobias,Ulf in the text file
 
-
+        //Practice 2
+        /*I AM DOING PRACTICE 2 AFTER PRACTICE 3 SINCE I AM USING TEXT FILE MANUFACTURED (WRITTEN) IN PRACTICE 3*/
+        // Create a textfile (.txt) and fill it with lines of names.
+        // a. In Java create a method that read in the lines into a Collection of your choice using BufferedReader.
+        // One line for each element in the Collection.
+        //File textFilePrace2 = new File("source/Practice2.txt");
+        String result = ExerciseTextFileService.readFromTextFile(textFilePrace3);
+        System.out.println(result);   // Displaying contents of file (Written with FIVE String Objects)  //Outputs  Amer
+                                                                                                         //         Erik
+                                                                                                         //         Martin
+                                                                                                         //         Tobias
+                                                                                                         //         Ulf
 
     }
 }
