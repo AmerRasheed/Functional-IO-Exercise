@@ -4,7 +4,7 @@ import java.io.*;
 
 public class ExerciseCopyService {
 
-
+/*
     public static void copy(File source, File destination)
     {
 try (
@@ -21,4 +21,6 @@ catch (FileNotFoundException e) {
     e.printStackTrace();
 }
     }
+
+ */
 }
