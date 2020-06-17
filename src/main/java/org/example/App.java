@@ -8,9 +8,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Hello world!
- */
 public class App {
     public static void main(String[] args) throws IOException {
         //Practice 1.
@@ -19,7 +16,7 @@ public class App {
         // a. In Java create a method that read in a String from file and return the String using FileReader.
 
         // Creating a text file
-   /    File textFilePrace1 = new File("source/Practice1.txt");
+        File textFilePrace1 = new File("source/Practice1.txt");
         String string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         ExerciseTextFileService.writeString(textFilePrace1, string);
 
@@ -49,7 +46,13 @@ public class App {
                                                                                                          //         Tobias
                                                                                                          //         Ulf
 
+
+        //Practice 4. Create a method that can copy a file using both BufferedInputStream and BufferedOutputStream.
+        File source = new File("source/AmerSnap_copy.png");
+        File destination = new File("destination/destination_AmerSnap.png");
+        ExerciseCopyService.copyWithBuffers(source,destination);
     }
+
 }
 // How to create Text File
 //1 creating a file                   App

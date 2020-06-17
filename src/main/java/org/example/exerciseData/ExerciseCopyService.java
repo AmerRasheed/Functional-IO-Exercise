@@ -4,23 +4,20 @@ import java.io.*;
 
 public class ExerciseCopyService {
 
-/*
-    public static void copy(File source, File destination)
-    {
-try (
-        FileInputStream in= new FileInputStream(source);
-        FileOutputStream out = new FileOutputStream(destination);
-        ){
-    int b;
-    while ((b=in.read())!= -1)
-        out.write(b);
-}
-catch (FileNotFoundException e) {
-    e.printStackTrace();
-} catch (IOException e) {
-    e.printStackTrace();
-}
+public static void copyWithBuffers(File source, File destination) {
+    try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(source));
+         BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(destination))) {
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        while ((bytesRead = in.read(buffer)) > 0) {
+            out.write(buffer, 0, bytesRead);  // off (off set i.e. from where it starts)
+            out.flush();
+        }
+
+    } catch (IOException ex) {
+        ex.printStackTrace();
     }
 
- */
+}
+
 }
