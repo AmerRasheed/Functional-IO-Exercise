@@ -5,27 +5,44 @@ import org.example.exerciseData.ExerciseTextFileService;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) throws IOException {
-        //1. Create a textfile (.txt) and fill it with some text content.
+        //Practice 1.
+        // Create a textfile (.txt) and fill it with some text content.
         // Tip: you can find random text here.
         // a. In Java create a method that read in a String from file and return the String using FileReader.
 
         // Creating a text file
-        File textFile = new File("source/exercise.txt");
+        File textFilePrace1 = new File("source/Practice1.txt");
         String string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-        ExerciseTextFileService.writeString(textFile, string);
+        ExerciseTextFileService.writeString(textFilePrace1, string);
 
         try {
-            String result = ExerciseTextFileService.readFromTextFile(textFile); //by clicking on readFromTextFile invokes "throws IOException"
+            String result = ExerciseTextFileService.readFromTextFile(textFilePrace1); //by clicking on readFromTextFile invokes "throws IOException"
             System.out.println(result);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        //Practice 2
+        // Create a textfile (.txt) and fill it with lines of names.
+        // a. In Java create a method that read in the lines into a Collection of your choice using BufferedReader.
+        // One line for each element in the Collection.
+        //File textFilePrace2 = new File("source/Practice2.txt");
+
+        //Practice 3. In Java create a Collection that contains at least five String objects.
+        // a. Then create a method that write each String object from the collection into a textfile.
+        File textFilePrace3 = new File("source/Practice3.txt");
+        List<String> collectionPractice3 = Arrays.asList("Amer","Erik","Martin","Tobias","Ulf");
+        ExerciseTextFileService.writetoFile(textFilePrace3, collectionPractice3);
+
+
 
     }
 }

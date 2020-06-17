@@ -1,6 +1,7 @@
 package org.example.exerciseData;
 
 import java.io.*;
+import java.util.List;
 
 public class ExerciseTextFileService {
 
@@ -29,5 +30,20 @@ public class ExerciseTextFileService {
             stringBuilder.append(letter);
         }
         return stringBuilder.toString();
+    }
+
+    public static List<String> writetoFile(File destination, List<String> src)
+    {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(destination)))
+        {
+            for (String toWrite : src)
+            { writer.write(toWrite); writer.newLine(); }
+            writer.flush();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return src;
     }
 }
